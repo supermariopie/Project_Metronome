@@ -19,22 +19,25 @@ if __name__ == "__main__":
     while (quit!="quit"):
         
         print("Welcome to the met!")
-        hola=1
+        hola="go"
         
         bm=int(input("Please input the speed of the metronome"))
         
-        m2 = multiprocessing.Process(target=fun2,args=(bm,))
+        m2 = multiprocessing.Process(target=play_sound,args=(bm,))
 
         m2.start()
 
-        while (hola!=0):
-            hola = int(input("input?"))
+        while (hola!="stop"):
+            hola = input("input?")
             
             
         
         m2.terminate()
         quit=input("Do you want to continue or quit")
-        
+    
+    print()
+    print ("Thank you for using our metronome!")
+    print()
     print("Credits")
     print("AC -- programming")
     print("NF -- programming")
